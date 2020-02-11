@@ -1,7 +1,14 @@
 import random
 
-streak_number = int(input('Enter streak number: '))
-toss_number = int(input('Enter number of tosses: '))
+while True:
+    try:
+        streak_number = int(input('Enter streak number: '))
+        toss_number = int(input('Enter number of tosses: '))
+        break
+    except:
+        print('Not valid number!')
+        continue
+
 numberOfStreaks = 0
 for x in range(10000):
     # Code that creates a list of 100 'heads' or 'tails' values.
@@ -15,13 +22,13 @@ for x in range(10000):
     streak = 0
     streak_bool = False
     for i in range(len(flip_list) - 1):
-        if streak == streak_number:
-            streak_bool = True
-            break
         if flip_list[i + 1] == flip_list[i]:
             streak += 1
         else:
             streak = 0
+        if streak == streak_number:
+            streak_bool = True
+
 
     if streak_bool == True:
         numberOfStreaks += 1
