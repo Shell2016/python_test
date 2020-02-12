@@ -28,6 +28,7 @@ for x in range(10000):
             streak = 0
         if streak == streak_number:
             streak_bool = True
+            break
 
 
     if streak_bool == True:
